@@ -5,7 +5,7 @@ import { StyleSheet, View, Button, TextInput, FlatList, Text, ActivityIndicator 
 //import films from '../Helpers/filmsData'
 import FilmItem from './FilmItem'
 import { getFilmsFromApiWithSearchedText } from '../API/TMDBApi' // import { } from ... car c'est un export nommé dans TMDBApi.js
-
+import { connect } from 'react-redux'
   
 class Search extends React.Component {
 
@@ -73,7 +73,16 @@ class Search extends React.Component {
                 <Button style={{ height: 50}} title='Recherche' onPress={() => this._searchFilms()} />
                 <FlatList
                     data={this.state.films}
+                    extraData={this.props.favoritesFilm}
                     keyExtractor={(item) => item.id.toString()}
+                    renderItem={({item}) =>
+                    <FilmItem
+                      film={item}
+                      // Ajout d'une props isFilmFavorite pour indiquer à l'item d'afficher un 🖤 ou non
+                      isFilmFavorite={(this.props.favoritesFilm.findIndex(film => film.id === item.id) !== -1) ? true : false}
+                      displayDetailForFilm={this._displayDetailForFilm}
+                    />
+                    }
                     renderItem={({item}) => <FilmItem film={item} displayFilmDetail={this._displayFilmDetail} />}
                     onEndReachedThreshold={0.5}
                     onEndReached={ () => {
@@ -112,4 +121,10 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Search
+const mapStateToProps = (state) => {
+    return {
+      favoritesFilm: state.favoritesFilm
+    }
+  }
+  
+  export default connect(mapStateToProps)(Search)

@@ -5,7 +5,6 @@ import { StyleSheet, View, Button, TextInput, FlatList, Text, ActivityIndicator 
 import FilmItem from './FilmItem'
 import FilmList from './FilmList'
 import { getFilmsFromApiWithSearchedText } from '../API/TMDBApi' // import { } from ... car c'est un export nommé dans TMDBApi.js
-import { connect } from 'react-redux'
   
 class Search extends React.Component {
 
@@ -61,7 +60,7 @@ class Search extends React.Component {
         this._loadFilms() })
     }
     render() {
-        console.log(this.props)
+        //console.log(this.props)
         return (
             <View style={styles.main_container}>
                 <TextInput  style={styles.textinput} placeholder='Titre du film'
@@ -107,10 +106,5 @@ const styles = StyleSheet.create({
     }
 })
 
-const mapStateToProps = (state) => {
-    return {
-      favoritesFilm: state.favoritesFilm
-    }
-  }
   
-  export default connect(mapStateToProps)(Search)
+  export default Search

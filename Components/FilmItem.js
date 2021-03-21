@@ -20,11 +20,11 @@ class FilmItem extends React.Component {
   }
 
     render() {
-        const {film, displayFilmDetail} =this.props
+        const {film, displayDetailForFilm} =this.props
         return (
             <TouchableOpacity
                   style  ={styles.main_container}
-                  onPress={() => displayFilmDetail(film.id)}
+                  onPress={() => displayDetailForFilm(film.id)}
             >
                 <Image 
                     style={styles.image}

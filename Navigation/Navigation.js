@@ -8,6 +8,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Search from '../Components/Search'
 import FilmDetail from '../Components/FilmDetail'
 import Favorites from '../Components/Favorites'
+import Test from '../Components/Test'
 
 const HomeStack = createStackNavigator();
 
@@ -58,6 +59,11 @@ class Navigation extends React.Component {
                     showIcon: true // On informe le TabNavigator qu'on souhaite afficher les icônes définis
                 }}
             >
+               {/*  <Tab.Screen
+                    name="Test"
+                    component={Test}
+                /> */}
+                
                 <Tab.Screen 
                     name="Recherche" 
                     component={HomeStackScreen}

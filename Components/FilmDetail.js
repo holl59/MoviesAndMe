@@ -53,7 +53,8 @@ class FilmDetail extends React.Component {
           onPress={() => this._shareFilm()}>
           <Image
             style={styles.share_image}
-            source={require('../Images/ic_share.png')} />
+            source={require('../images/ic_share.android.png')} 
+            />
         </TouchableOpacity>
       )
     }
@@ -75,10 +76,10 @@ class FilmDetail extends React.Component {
 }
 
   _displayFavoriteImage() {
-    var sourceImage = require('../Images/ic_favorite_border.png')
+    var sourceImage = require('../images/ic_favorite_border.png')
     if (this.props.favoritesFilm.findIndex(item => item.id === this.state.film.id) !== -1) {
       // Film dans nos favoris
-      sourceImage = require('../Images/ic_favorite.png')
+      sourceImage = require('../images/ic_favorite.png')
     }
     return (
       <Image

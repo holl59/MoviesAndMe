@@ -68,9 +68,9 @@ class Navigation extends React.Component {
                     name="Recherche" 
                     component={HomeStackScreen}
                     options= {{
-                        tabBarIcon: () => { // On définit le rendu de nos icônes par les images récemment ajoutés au projet
+                        tabBarIcon: () => { // On définit le rendu de nos icônes par les Images récemment ajoutés au projet
                           return <Image
-                            source={require('../images/ic_search.png')}
+                            source={require('../Images/ic_search.png')}
                             style={styles.icon}/> // On applique un style pour les redimensionner comme il faut
                         }
                       }}
@@ -81,7 +81,7 @@ class Navigation extends React.Component {
                     options= {{
                         tabBarIcon: () => {
                           return <Image
-                            source={require('../images/ic_favorite.png')}
+                            source={require('../Images/ic_favorite.png')}
                             style={styles.icon}/>
                         }
                     }}                    

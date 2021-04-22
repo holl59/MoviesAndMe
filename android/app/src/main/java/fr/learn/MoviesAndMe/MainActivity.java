@@ -1,4 +1,4 @@
-package fr.learn.MoviesAndMe;
+package com.example.moviesandme;
 
 import android.os.Bundle;
 

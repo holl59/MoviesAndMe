@@ -24,7 +24,7 @@
     },
     "description": "",
     "android": {
-      "package": "fr.learn.MoviesAndMe"
+      "package": "com.example.moviesandme"
     }
   }
 }

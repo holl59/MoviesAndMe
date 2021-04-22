@@ -1,4 +1,4 @@
-package fr.learn.MoviesAndMe.generated;
+package com.example.moviesandme.generated;
 
 import java.util.Arrays;
 import java.util.List;
